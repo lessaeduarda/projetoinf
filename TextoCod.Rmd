@@ -1,0 +1,418 @@
+---
+title: "Motivações e busca por informação na América Latina"
+author: "Maria Eduarda R. N. Lessa"
+date: "Outubro, 2020"
+output:
+  pdf_document: default
+  '': default
+fontsize: 12pt
+linestretch: 1.5
+---
+
+```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
+require(knitr)
+require(kable)
+```
+
+
+
+## **RESUMO**
+
+###### Este projeto tem como objetivo explorar as motivações do eleitor que estão associadas ao processo de busca por informação. A análise será realizada nos países da América Latina através de dados provenientes de pesquisas de opinião pública: o Latinobarómetro, o Global Corruption Barometer e Barômetro das Américas. Em outras palavras: serão analisados os fatores que podem influenciar os eleitores a buscarem informação sobre política, especificamente aqueles relacionados à confiança nas instituições, a percepção sobre a corrupção e ao nível de eficácia interna e externa. 
+
+## **PALAVRAS-CHAVE:** 
+###### informação política; motivação; eficácia política
+
+
+\pagebreak
+
+
+## **1.	INTRODUÇÃO**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; O que motiva os eleitores a buscarem informação? Será que sentimentos negativos, tais como a desconfiança nas instituições, baixos níveis de eficácia[^1] e percepção de corrupção endêmica são fatores que mobilizam os eleitores a buscarem informações? A figura de um cidadão engajado, participativo e capaz de responsabilizar os governantes por suas performances é antiga e estritamente relacionada aos ideais da democracia. De perspectivas utópicas, - como na _folk theory of democracy_ (Achen & Bartels, 2017) que define a democracia como um  sistema “do povo, para o povo” - às teorias hodiernas sobre comportamento do eleitor - que apontam para uma série de vieses e limitações que esses incorrem durante o processo de tomada de decisão e formulação de preferências -, a dimensão da participação dos cidadãos na vida pública é tema de acalorados debates e grande interesse.  
+
+[^1]: O conceito de eficácia é divido entre interna e externa. _Internal political efficacy_, ou eficácia interna, diz respeito à crença de que a ação individual é capaz de impactar o resultado de um determinado processo político. A eficácia externa, por sua vez, é a crença de que o governo leva em consideração as opiniões dos cidadãos no processo de formulação de políticas públicas (Campbell et al., 1954 apud. Pavão, 2019).
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Com a rápida evolução das tecnologias da informação e comunicação (TICs) essa discussão ganha novos capítulos. Ao mesmo tempo em que a confiança dos cidadãos em seus governos e instituições tem apresentado os menores valores desde que pesquisas de opinião nesta área começaram a ser desenvolvidas, essas novas ferramentas são apontadas como instrumentos capazes de suprir lacunas ao aproximar governos e cidadãos, engajar esses últimos nos processos de formulação e controle das políticas públicas, além de aumentar o alcance das informações de interesse público. 
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Ao reconhecer os limites das democracias eleitorais em representarem fidedignamente as preferências de seus cidadãos; acadêmicos, sociedade civil, organizações não-governamentais e internacionais, passaram a discutir o potencial dessas tecnologias em tornar governos mais transparentes e diminuir obstruções na comunicação entre governos e governados (Davies, 2010). Com a multiplicação dos canais de comunicação, duas teorias concorrentes buscam explicar a relação entre o consumo de informação e o engajamento e participação dos eleitores: a do círculo virtuoso (Norris, 2000) e a do espiral do cinismo (Cappella e Jamieson, 1997). A primeira aponta que o consumo de informação através de vários canais (redes sociais, jornais, televisão etc.) aumenta os níveis de conhecimento, confiança nas instituições e eficácia dos cidadãos e, assim, fomenta a participação desses últimos. A segunda, por sua vez, alega que a forma como a mídia apresenta as notícias relacionadas à política torna o eleitor cético quanto a sua capacidade de participar e de “fazer a diferença”. Isso acontece, de acordo com a teoria, porque as informações disponíveis são enviesadas, levam a um entendimento distorcido da realidade e deprimem a participação ao tornar os eleitores cínicos quanto ao poder que possuem e à responsividade do sistema político.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; A revolução informacional tem criado um “ambiente político rico em informações e intensivo em comunicação” (Bimber, 2001) capaz de influenciar processos fundamentais de interesse da Ciência Política. É frequente na literatura a exposição de associações entre o custo da informação e a probabilidade de que um cidadão compareça às urnas (Larcinese, 2009). Enquanto uma parte dos autores afirma que é possível que alguns países, como os Estados Unidos, estejam a caminho de uma recessão democrática (Foa & Mounk, 2017), outros sugerem que, na verdade, a forma de participação dos indivíduos na vida pública tem passado por um processo de mudança e adquirido novas “roupagens” que não são capturadas por medidas como o comparecimento às urnas ou satisfação com a democracia (Norris, 2017). O presente estudo utiliza uma abordagem alternativa para mensurar a participação: será representada pela busca por informação. Dessa forma, além de identificar motivações associadas a esse processo, também será possível analisar as diferenças dos hábitos de consumo de notícias de diferentes faixas etárias e testar a hipótese de que a forma de participação das novas gerações tem mudado. 
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Para melhor explicar o comportamento dos eleitores, faz-se necessário, antes, compreender suas motivações e objetivos (Chong, 2013). Nesse sentido, é possível postular que pode haver um “meio-termo” entre o círculo virtuoso e o espiral do cinismo[^2], isto é, diferentes motivações podem estar relacionadas a diferentes comportamentos. As emoções, por exemplo, desempenham papel de suma importância na política, no geral, e no processo de busca e aquisição de informações, mais especificamente[^3]. Emoções negativas, tais como a raiva e a ansiedade, têm o poder de influenciar essa busca, ao servir como motivadoras ou depressoras da participação e engajamento dos eleitores (Magní, 2017).
+
+[^2]: Ao invés de concorrentes, essas podem ser teorias complementares.
+[^3]: Civettini e Redlawsk (2009) apontam que, “para a política, os sentimentos são tão importantes quanto os pensamentos”.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; O objetivo desse trabalho, portanto, é testar a relação entre percepções capazes de desencadear emoções negativas[^4] - como da corrupção endêmica, insatisfação com as instituições e baixos níveis de eficácia - e a busca por informação, aqui considerada uma forma de participação. Essa última variável será mensurada de 3 diferentes formas: frequência de busca, quantidade de meios utilizados e, finalmente, solicitação de informações ao governo.
+
+[^4]: Especialmente a raiva e a ansiedade.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Ao observar associações relevantes e seus respectivos papeis na construção de um círculo virtuoso ou de um espiral do cinismo, esse estudo contribuirá para identificar situações nas quais os eleitores estariam mais vulneráveis e se insere no debate sobre o potencial risco trazido por práticas como campanhas de desinformação[^5]. O recorte espacial será a América Latina, nos anos de 2018 e 2019. Serão utilizados dados de pesquisas de opinião pública - especificamente do _Latinobarómetro_, do Barômetro das Américas e do _Global Corruption Barometer_ - para analisar as associações supracitadas.  
+
+[^5]: Ainda de acordo com Chong (2013), _“when individuals are not motivated, they have less knowledge of the implications of policies, rely more heavily on partisan and ideological cues and other shortcuts to make choices, are less aff ected by substantive arguments, and more likely to engage in motivated reasoning”_.
+
+## **2.	REVISÃO DA LITERATURA:**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; A literatura a respeito das motivações relacionadas à busca por informação é escassa. Faz-se necessário, portanto, revisitar estudos que tratam da relação entre essas motivações e medidas tradicionais de participação, tais como o comparecimento às urnas, apoio a um partido ou candidato e participação em protestos, por exemplo.  A revisão da literatura está estruturada em 6 tópicos: o primeiro apresenta a relevância, para a esfera política, do processo de busca por informação. O segundo conceitua o que é entendido, no presente estudo, como busca por informação e explora brevemente a relação entre esse fenômeno e demais medidas de participação. O terceiro aborda o papel das emoções no processo de tomada de decisão. Finalmente, os três últimos tópicos sumarizam as discussões sobre as principais variáveis explicativas que serão utilizadas, justificam a escolha delas e exploram a relação entre cada uma dessas variáveis e a busca por informação (ou demais medidas de participação disponíveis na literatura existente).    
+
+### **2.1. INFORMAÇÃO IMPORTA?**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;	O título deste tópico reproduz um outro de mesmo nome escrito por Bartels (1996)[^6] ao buscar observar os efeitos da informação, ou da falta dela, na escolha de um candidato por cidadãos estadunidenses. O autor observa que há diferenças estatisticamente significantes entre as escolhas dos eleitores pouco e muito informados e que elas se mantêm ainda que sejam adicionados controles sociodemográficos, tais como idade, renda, etnia, educação, sexo, religião e estado civil. 
+
+[^6]: _“Does Information Matter?”_.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;	É observado que os níveis de informação variam a depender do ambiente político (Bennett, 1988). Uma outra linha de estudo, no entanto, sugere que esse não deve ser um ponto de preocupação, visto que a falta de informação de alguns eleitores em determinados assuntos é “compensada” por outros eleitores e que, quando as decisões desses são analisadas de forma agregada, se comportam como se _(as if)_ possuíssem informações suficientes para escolherem um candidato de acordo com as suas preferências[^7]. O uso de atalhos cognitivos também é frequentemente apontado como uma estratégia eficaz para suprir a falta de informação. Esses achados, no entanto, não se mostraram robustos ao serem replicados. Ademais, análises de pesquisas de opinião pública têm, geralmente, mostrado que há, de fato, “diferenças entre as percepções e opiniões de eleitores melhor e menos informados”(Bartels, 1996)[^8]. Esses últimos, por exemplo, são mais suscetíveis a _priming_ e demais técnicas de manipulação do discurso (Krosnick e Brannon, 1993; Bartels, 1996). 
+
+[^7]: _“To act as if they were fully informed”_.
+[^8]: _“More generally, researchers analyzing data from mass opinion surveys have found a variety of potentially relevant differences between the perceptions and opinions of well-informed and less well-informed citizen”_.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; São frequentes os estudos que encontram uma associação positiva entre o consumo de informação e participação. É observado que o uso de jornais e televisão para o consumo de _hard news_[^9], por exemplo, está relacionado ao aumento da participação política (Scheufele, Nisbet, Brossard e Nisbet, 2004). Essa relação é, aparentemente, indireta, isto é, o consumo de informações aumenta o conhecimento político, o que, por sua vez, promove uma participação mais ativa dos eleitores. Essas afirmações são corroboradas por uma série de estudos: eleitores que escolhem “consumir” notícias apresentam maior probabilidade de votar (Prior, 2007); cidadãos que criam um maior repertório se sentem mais confiantes para participar (Wolsfeld, Yarchi e Samuel-Azran, 2016) e observa-se que o ato de buscar informações em redes sociais constitui um significante preditor para a participação política e o engajamento civil, quer seja _online_ ou _offline_ (Gil de Zúñiga, Jung e Valenzuela, 2012). Também são observadas diferenças no “repertório informacional” e na frequência de participação dos eleitores que buscam notícias e daqueles que as evitam (Wolsfeld, Yarchi e Samuel-Azran, 2016), além de a diversificação de meios para a busca de informação contribuir para o enriquecimento desse repertório, especialmente quando são utilizados meios tradicionais e alternativos de forma complementar.
+
+[^9]: São notícias que tratam de temas como economia e política, por exemplo. São o oposto das soft news, que são aquelas relacionadas ao entretenimento.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; São observadas diferenças significativas no comportamento dos eleitores a depender do tipo e quantidade de informação que esses obtêm. Eleitores mais bem informados apresentam maior probabilidade de votar (Palfrey e Poole, 1987); ademais, a capacidade de adquirir informação, assim como a quantidade adquirida, está positivamente associada à participação (Larcinese, 2009). Também, observa-se que a cobertura da mídia sobre assuntos relacionados à política cria um “círculo virtuoso”, que em um primeiro momento facilita o acesso dos eleitores a estes canais de informação e, posteriormente, fomenta o engajamento cívico (Norris, 2000).
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;	A exposição dos resultados acima apresentados suscita uma outra questão: se, afinal, são observados efeitos da informação sobre as escolhas dos eleitores, o que, em primeiro lugar, está relacionado à busca por informação? Além das associações já conhecidas, tais como interesse, sofisticação, educação, renda e idade, quais outras motivações estão associadas a esse processo? O próximo tópico explica o que, nesse estudo, é entendido como busca por informação e explora as relações entre esse fenômeno e uma série de variáveis.
+
+### **2.2. BUSCA POR INFORMAÇÃO**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; É necessário, primeiramente, conceituar o que aqui é apontado como “busca por informação” e apresentar as distinções entre esse fenômeno, interesse e conhecimento político. Esses três fatores, apesar de estarem fortemente associados, representam diferentes processos. A busca por informação é uma atitude motivada[^10]; é comum, na área da comunicação, encontrar análises sobre esse assunto que utilizam a abordagem proposta pela teoria do “uso e gratificação”, que afirma que os indivíduos se engajam nessa atividade a fim de satisfazer necessidades psicológicas. Assim, é possível que eleitores não interessados em política busquem informações com o objetivo de cumprir o papel de “bom cidadão” que lhe é esperado (Riker e Ordeshook, 1968). Esse achado ilustra a complexidade da relação entre essas variáveis ao contrariar uma suposição que parece simples à primeira vista.
+
+[^10]: Ou _“goal-oriented task”_.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Em relação à sofisticação política[^11], é observado que a simples “exposição à mídia não leva, necessariamente, a maiores níveis de conhecimento”(Hansen e Pedersen, 2014)[^12], visto que práticas de manipulação do discurso, tais como o _framing_[^13], motivam a adoção de atitudes cínicas em relação à política e estão relacionadas a baixos níveis de eficácia. Em outras palavras: o simples contato com a informação é uma condição necessária, mas não suficiente, para o aumento nos níveis de conhecimento. Nesse processo, a relação entre capacidade cognitiva e absorção de informações também desempenha papel essencial: para que o contato com a informação seja “transformado” em conhecimento é necessário que o eleitor reúna certas habilidades e, portanto, diferentes níveis dessas últimas levariam a diferentes resultados no processamento das informações (ibid., 2014). Há, ademais, uma série de características individuais que podem levar a assimetrias no tratamento da informação adquirida, como a idade, por exemplo. A sofisticação, portanto, não é capaz de explicar por si só toda a diferença entre o “nível” de participação de diferentes eleitores, nem a quantidade de informação que decidem adquirir. 
+
+[^11]: Será usado aqui como sinônimo para “conhecimento”.
+[^12]: E, de acordo com Graber (1988), os veículos de mídia são as principais fontes de informação política. 
+[^13]: É uma forma enviesada de apresentar uma informação com objetivo de influenciar a avaliação dos receptores da mensagem. 
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Finalmente, o interesse em política é uma característica individual que pode motivar a busca por informação, mas não é o único fator que influencia esse processo e, portanto, esses conceitos não devem ser entendidos nem utilizados de maneira intercambiável. O processo decisório dos eleitores é dividido em quatro etapas: preferências individuais, busca por informação, avaliação e escolha (Lau e Redlawsk, 2003). Enquanto o interesse por política se insere na primeira categoria, junto com uma série de outros fatores discutidos a seguir, a busca por informação é um processo distinto, porém moldado, pelas preferências individuais.    
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; A busca por informação é, portanto, uma atitude deliberada por parte dos eleitores que optam pela exposição às fontes de informação política. Há uma série de fatores que podem reprimir ou motivar essa ação. De acordo com Downs (1957), como o eleitor não espera que uma disputa seja acirrada o suficiente a ponto de que o seu voto faça a diferença no resultado, pressupõe-se que prefira continuar desinformado. As TICs, no entanto, têm diminuído o custo de obtenção de informação e esse é apontado como um dos principais determinantes da quantidade de informação que um indivíduo decide adquirir (Bimber, 2001). Ademais, emoções (Magní, 2017; Lyons & Sokhey, 2014)[^14], sentimentos de “dever civil” (Downs, 1957), predisposições políticas[^15], ambiente informacional, confiança na mídia (Larcinese, 2009), capacidade cognitiva, idade (Lau & Redlawsk, 2006) e eficácia política são variáveis frequentemente mencionadas na literatura como capazes de influenciar a busca por informação, ao desestimular ou motivar os eleitores a se engajarem voluntariamente nesse processo. 
+
+[^14]: Ademais, Marcus, Neuman e MacKuen (2000) afirmam que “quando cidadãos têm contato com um fator novo ou ameaçador, um processo de avaliação e julgamento político é acionado”.
+[^15]: Como ideologia, apoio a partido ou candidato.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Crenças pessoais também podem influenciar a decisão dos indivíduos em relação a exposição à informação (Stroud, 2008). Ademais, as estratégias mobilizadas para processar essas informações também podem afetar significativamente a participação dos eleitores, assim como os seus níveis de eficácia de maneira indireta, através de um processo conhecido como _selective exposure_. Esse é um conceito mobilizado com frequência no debate sobre busca e tratamento de informação para ilustrar um viés que os eleitores normalmente incorrem durante a busca e o processamento de informações: eles buscam mais informações sobre candidatos pelos quais desenvolveram afeto e evitam o contato com informações dissonantes[^16]. Este fenômeno, por sua vez, pode aumentar o desafeto entre diferentes grupos políticos, processo conhecido como polarização afetiva, e trazer implicações para a participação dos cidadãos. 
+
+[^16]: Lau, Kleinberg, Andersen, Ditonto e Redlawsk (2016) explicam o termo a partir de uma analogia: quando um indivíduo toma a decisão de adquirir um produto X ele terá pouco interesse em – ou incentivo para - levantar informações sobre um produto equivalente Y e, provavelmente, evitará fontes de informação que apontem que o produto Y é melhor que o X. O mesmo ocorre com informações relacionadas à política, especialmente na avaliação de candidatos.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Diferentes canais de informação também podem estar associados a diferentes reações por parte dos eleitores; Cuillier e Piotrowski (2009) apontam que os indivíduos que usam a internet para buscar informação tendem a apresentar maiores níveis de eficácia, a serem mais participativos e a apoiarem medidas como a publicação de dados relativos à performance do governo, por exemplo. Quanto à televisão, Norris (1996) encontra que - ao contrário do que postulou Putnam (1995b), ao afirmar que a chegada da televisão estava associada à menores níveis de confiança interpessoal e nas instituições, assim como no declínio da participação política – o ato de assistir aos noticiários estava positivamente associado à eficácia e ao interesse por política nos Estados Unidos. A autora também encontra uma associação positiva entre o ato de se informar através de jornais impressos e conhecimento político.    
+###### &nbsp;&nbsp;&nbsp;&nbsp; Apesar de já elucidados os motivos pelos quais a obtenção de informação é de interesse para a Ciência Política, também se faz necessário apresentar brevemente as discussões sobre motivações para aprender no campo da psicologia. A decisão de solucionar um problema de matemática, por exemplo, pode estar relacionada a uma série de motivações, tais como evitar uma punição, uma motivação intrínseca advinda da recompensa em encontrar a solução ou mesmo uma forma de atender à pressão social (Immordino-Yang & Damasio, 2007). É preciso olhar para o processo de aprendizagem – e, portanto, de busca e tratamento de informações - de uma forma holística e levar em consideração a influência das motivações e emoções no processo de tomada de decisão. 
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Enquanto esse tópico se dedicou à apresentação da discussão sobre possíveis fatores associados à busca por informação, o próximo dá um passo à frente e introduz trabalhos que exploram a relação entre a variável participação (representada, majoritariamente, pelo comparecimento às urnas, doação para campanhas, partidos ou políticos, participação em protestos e assinatura de petições), emoções e percepções. Será apresentada uma breve discussão a respeito do papel das emoções nas decisões dos eleitores e, em seguida, serão elucidados os motivos da escolha das variáveis eficácia, percepção sobre corrupção e confiança nas instituições, que são apontados de maneira frequente como fatores capazes de provocar sentimentos e emoções com o potencial de influenciar comportamentos de interesse para o presente estudo.   
+
+### **2.3. EMOÇÕES**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;	Na Teoria da Inteligência Afetiva é apontado que os eleitores usam de suas emoções para melhor compreenderem as questões relacionadas à política (Marcus, MacKuen & Neuman, 2000). As emoções, muitas vezes, são capazes de condicionar as respostas dos indivíduos a determinadas situações. O processo de busca e tratamento de informações, no geral, e sobre política, mais especificamente, são casos em que esse fenômeno é observado. Os eleitores tendem a prestar pouca atenção em temas relacionados à política por uma série de motivos mencionados em tópicos anteriores, tais como a falta de interesse, de conhecimento ou mesmo de tempo. Quando emoções como a raiva ou a ansiedade intermediam esse processo, no entanto, diferentes resultados são esperados. A ansiedade tende a acionar um “modo de vigilância” que faz com que o eleitor processe informações de maneira mais cuidadosa e preste mais atenção aos estímulos que recebe. A raiva, por sua vez, deriva de uma sensação de frustração e faz com que os indivíduos recorram a formas menos cautelosas de tratamento da informação adquirida (Birch., Allen, N. & Sarmiento-Mirwaldt, K., 2017). 
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; As hipóteses que serão desenhadas no presente estudo partem do pressuposto de que a relação entre a eficácia, a percepção sobre – e a experiência com – a corrupção, a confiança nas instituições e o processo de busca por informação sobre política é intermediada por emoções, notadamente raiva ou ansiedade, que têm o poder de motivar ou deprimir essa busca.
+
+### **2.4. EFICÁCIA E PARTICIPAÇÃO**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; É mais provável que um cidadão participe da política quando sente que tem o “poder” de interferir em algum resultado (Valentino, Gregorowicz & Groenendyk, 2008). Eficácia, como anteriormente conceituado, é, portanto, a crença de que o sistema político é responsivo, ou seja, que atende às necessidades e clamores de seus cidadãos (eficácia externa) e de que esses últimos são capazes de participar ativamente – e individualmente - da vida pública (eficácia interna). Alguns tipos de participação, como o envolvimento com partidos políticos, podem levar a níveis mais altos de eficácia externa, enquanto outros, como participar de protestos, tendem a deprimir esses níveis (ibid., 2008). Também observa-se que quando os cidadãos se sentem ameaçados, se tornam mais ansiosos, emoção que faz com se engajem no processo político e, como consequência, percebam o sistema político como mais responsivo – o que por sua vez aumenta os níveis de eficácia (Marcus et al., 2000).  
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; A relação entre essas variáveis é, aparentemente, mutuamente reforçada, visto que os cidadãos ganham confiança quanto à sua influência nos processos políticos e sentem que essa participação “vale a pena”, ou seja, os níveis de eficácia aumentam quando os eleitores participam e eles participam quando se sentem confiantes que suas ações têm o poder de moldar resultados (Wolsfeld, Yarchi & Samuel-Azran, 2016). A eficácia interna tem sido frequentemente apontada como um motivador para a participação política e o engajamento cívico, visto que a percepção que as pessoas cultivam a respeito da própria capacidade em compreender e participar da política é um fator de extrema importância na decisão que estes tomam em “dedicar o tempo e esforço necessários para que se informem e participem ativamente” (Caprara & Vecchione, 2013). 
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Em síntese, os achados são ambivalentes: enquanto alguns autores afirmam que níveis altos de eficácia interna estão positivamente associados à participação, outros apontam que baixos níveis dessa primeira variável podem levar a uma maior participação. O objetivo desse trabalho é analisar se sentimentos e percepções negativas estão associadas a maiores ou menores níveis de participação e, portanto, a primeira hipótese a ser testada nesse estudo parte do pressuposto que os eleitores com baixos níveis de eficácia interna tendem a desenvolver um sentimento de frustração quanto à sua capacidade de participação. Essa frustração, por sua vez, estaria associada à raiva, o que faz com que os eleitores optem por absterem-se do processo. Altos níveis de eficácia interna, por outro lado, fomentariam uma sensação de euforia que, por sua vez, estaria associada a maiores níveis de participação.A hipótese, portanto, é que percepções de eficácia interna estão positivamente associadas à busca por informação sobre política. 
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; O argumento proposto é, aparentemente, intuitivo: normalmente espera-se que cidadãos mais eficazes, que se sentem melhor preparados para compreender a política e que acreditam que os seus governos levam em conta as demandas da população participem mais. Essa relação, no entanto, é mais complexa do que aparenta ser; apesar de grande parte da literatura corroborar essa afirmação, há também autores que apontam que menores níveis de eficácia podem, na verdade, contribuir para a mobilização dos que acreditam que o governo não atende às demandas dos seus cidadãos. Não se espera encontrar uma relação causal, tanto pela natureza dos dados que serão utilizados, quanto pela natureza da relação entre eficácia e participação encontrada na literatura. Como mencionado anteriormente, espera-se que estas variáveis se reforcem mutuamente: as percepções em relação aos níveis de eficácia interna motivam os cidadãos a participarem e cidadãos que participam mais, por sua vez, se tornam mais eficazes.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Enquanto os achados sobre a relação entre a percepção de eficácia interna e participação são mistos, a literatura sobre eficácia externa aponta para uma relação positiva entre as duas variáveis. A eficácia externa está normalmente associada à confiança nas instituições e no sistema político e representa a crença de que esse último é responsivo às necessidades dos cidadãos. Aqueles que acreditam que os governantes olham para os cidadãos tendem a confiar mais nas instituições e sentem que são capazes de moldar resultados através da participação. Também, há dois importantes fatores nesse processo: a percepção que os eleitores têm da vontade que o governo demonstra em escutar os governados e a percepção da capacidade de implementar suas demandas (de Moor, 2015)[^17]. Ambos são capazes de influenciar as percepções de eficácia externa dos cidadãos; se um eleitor acredita que o governo busca ouvir às demandas dos eleitores, mas não tem capacidade operacional para implementá-las, pode adotar um comportamento cínico e optar pela abstenção. A segunda hipótese a ser testada nesse estudo, no entanto, difere da dinâmica adotada para formular a primeira hipótese e vai de encontro com os resultados encontrados na literatura. É assumido que baixos níveis de efiicácia externa são capazes de fomentar a desconfiança nas instituições, o que, por sua vez, estimularia a ansiedade dos eleitores e faria com que esses se mobilizassem. A segunda hipótese (H1b) a ser testada no estudo, portanto, é que percepções de eficácia externa estão negativamente associadas à busca por informação sobre política. 
+
+[^17]: O autor chama de _“external input efficacy”_ e _“external output efficacy”_.
+
+### **2.5. CONFIANÇA E PARTICIPAÇÃO**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;	Confiança é, por vezes, uma medida considerada abstrata e de difícil compreensão, tanto para aqueles que respondem às perguntas das pesquisas de opinião, quanto para aqueles que analisam os resultados. Ainda assim, a relação entre confiança e participação é há tempos explorada. Confiança, nestes casos, é representada através de uma série de fenômenos: confiança interpessoal, nas instituições, na mídia, nos partidos, no presidente. A confiança interpessoal, por exemplo, é apontada como um fator que intermedia a relação entre desigualdade social e participação política, já que maior desigualdade influencia negativamente a confiança entre cidadãos de diferentes classes sociais, o que por sua vez, deprime a participação (Uslaner & Brown, 2005). A confiança nas instituições, por sua vez, desempenha importante papel na decisão dos eleitores em participar, assim como na percepção de legitimidade das eleições: “se aos indivíduos falta confiança na justiça do processo eleitoral, é pouco provável que eles votem, o que leva a baixos níveis de comparecimento às urnas, gerando questionamentos sobre os mandatos dos oficiais popularmente eleitos (...)[^18]” (Clausen, Kraay & Nyiri, 2009). 
+
+[^18]: _“(...) if individuals lack confidence in the honesty of the electoral process they are unlikely to vote, leading to low turnout rates that cast doubt on elected officials’ popular mandates (...)”_.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;	Em relação à associação entre confiança no governo e participação, é apontado que baixos níveis de confiança podem mobilizar cidadãos e encorajá-los a participarem: nos Estados Unidos, a falta de confiança dos Afro-Americanos no governo motivou a eclosão de protestos (Avery, 2006). Ademais, quando testada essa relação na Austrália e na Nova Zelândia, observou-se que a confiança no governo estava negativamente associada à participação (Goldfinch, Gauld & Herbison, 2009)[^19]. A desconfiança nas instituições também está relaciona a baixos níveis de participação política, assim como uma maior tolerância em relação ao uso da violência para fins políticos (Clausen, Kraay & Nyiri, 2009).  
+
+[^19]: Nesse estudo específico, participação foi mensurada através do contato – ou tentativa - do eleitor com parlamentares e busca por informação sobre o governo.  
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; É frequentemente encontrado na literatura o pressuposto de que, em uma democracia, para o funcionamento ideal das instituições, é necessário que os cidadãos confiem em seus governos. Os achados aqui compilados, no entanto, apontam que a falta de confiança, muitas vezes, pode servir de motivador para a participação e para os processos de _accountability_ por parte dos próprios eleitores[^20]. Mais uma vez, é adotado o pressuposto que a falta de confiança (ou mesmo a desconfiança) está relacionada à ansiedade. A partir desse argumento é desenvolvida a segunda hipótese (H2) a ser testada no presente estudo: os níveis de confiança nas instituições estão negativamente associados à busca por informação sobre política.
+
+[^20]: Ou, em outras palavras, _public accountability_.
+
+### **2.6. PERCEPÇÃO SOBRE CORRUPÇÃO E PARTICIPAÇÃO**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;	A discussão desenvolvida neste tópico está estritamente relacionada àquela do tópico anterior. Alguns autores apontam que a percepção de corrupção endêmica erode a confiança nas instituições, o que, por sua vez, deprime a probabilidade de participação. Outros, no entanto, apontam que a percepção de maiores níveis de corrupção mobiliza os eleitores (principalmente na forma de comparecimento às urnas) com o objetivo de punir políticos ou instituições corruptas. Também é importante mencionar que, geralmente, em pesquisas de opinião, são medidos dois fenômenos que se relacionam de diferentes formas com a variável participação: a percepção do nível de corrupção e a “experimentação” da corrupção. A segunda é um fator “mais exógeno” do que a percepção, visto que envolve a ação deliberada por parte de terceiros (Clausen, Kraay e Nyiri, 2009)[^21]. Diferentes resultados têm sido encontrados a depender da forma como as variáveis “corrupção” ou “participação” são medidas. 
+
+[^21]: Como pedir propina, por exemplo.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Os níveis percebidos de corrupção estão, normalmente, negativamente relacionados à participação dos eleitores e ao apoio ao político incumbente. A percepção sobre o nível de corrupção também está associada à confiança nas instituições e às percepções de eficácia (Klasnja, Tucker & Deegan-Krause, 2014). Foi observado na Europa que a percepção da corrupção estava negativamente associada ao comparecimento às urnas, ou seja, quanto maior o nível de corrupção percebido pelo eleitor, menor a probabilidade de que esse decidisse votar (Sundstrom & Stockemer, 2015) [^22]. Nesse sentido, também é apontado que nos países em que a corrupção é vista como um problema endêmico, os eleitores tendem a generalizar o problema e cultivar a crença de que os políticos são incapazes de resolverem-no (Pavão, 2018). As observações apresentadas se relacionam com outra postulada por Birch, Allen e Sarmiento-Mirwaldt (2017) ao apontarem que a raiva tende a fomentar a descrença no “valor” da participação[^23], levar os indivíduos a performarem avaliações “rasas” sobre um problema e, assim, generalizar a aquele processo como algo inerente aos envolvidos (e.g. todo político é corrupto)[^24]. 
+
+[^22]: Os autores analisaram eleições em municípios de 18 países europeus.
+[^23]: E, consequentemente, na busca por informação.
+[^24]: _“Anger (...) ought to blunt people’s critical faculties, hamper their propensity to undertake demanding evaluations of new information and increase the likelihood that they will attribute negative outcomes to individuals rather than to contextual factors. Thus, anger ought to lead to more generalised condemnation of politicians as corrupt”_.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Quanto ao fato de ter “experimentado” a corrupção, é observada, na América Latina, uma associação positiva dessa variável com o engajamento político (Bonifácio & Paulino, 2015), isto é: os cidadãos que experimentaram este tipo de situação apresentaram maior probabilidade de se engajarem em atividades relacionadas à política. Há duas possíveis explicações para esse fenômeno: a primeira é que essa experiência pode fomentar a insatisfação com o sistema e a participação serviria como uma forma de punir os políticos corruptos. A segunda, por sua vez, afirma que essa experiência pode servir de estímulo para o eleitor (que recebeu dinheiro em troca do voto, por exemplo). 
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; A terceira hipótese a ser testada, portanto, está dividida em dois diferentes fenômenos: a percepção sobre a corrupção e a experiência com a corrupção. A primeira assume que a percepção de altos níveis de corrupção tende a fomentar um sentimento de raiva nos eleitores, que, por sua vez, tornam-se céticos quanto aos seus “poderes” em moldar algum resultado. Também, um pressuposto importante para essa relação é que essas percepções são moldadas pelas informações que os eleitores adquirem e, portanto, é uma relação mutuamente reforçada: a informação molda a percepção, que fomenta a raiva, que influencia a busca por informação e assim sucessivamente. A hipótese (H3a), portanto, é que a percepção dos níveis de corrupção está negativamente associada à busca por informação sobre política. Enquanto é esperado que a falta de confiança e baixos níveis de eficácia funcionem como motivadores da participação, para a percepção da corrupção é esperada uma reação de cinismo, ou seja: quando o cidadão acredita que há altos níveis de corrupção, é possível que este sinta que a sua participação não será capaz de mudar esse cenário e escolha não participar.   
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; A hipótese sobre experiência com a corrupção, por outro lado, é construída a partir de um outro pressuposto: de que essa vivência ativa o “modo de vigilância”, torna as “vítimas” mais ansiosas e fomenta a participação dessas. Diferentemente da percepção sobre a corrupção, espera-se que a relação entre a experiência com a corrupção e a busca por informação seja intermediada pela ansiedade. Essa suposição encontra suporte em estudos que encontram uma relação positiva entre o fato de experimentar atos de corrupção e seus níveis reportados de ansiedade dos eleitores (Gillanders, 2015). Esta hipótese, portanto, busca testar se ter experimentado um ato de corrupção está associado ao aumento na probabilidade de buscar informações sobre política. 
+
+## **3. HIPÓTESES**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; As hipóteses a serem testadas através de análises exploratórias e modelos de regressão são as seguintes:   
+###### _Hipótese 1a:_ Percepções de eficácia interna estão positivamente associadas à busca por informação sobre política.
+###### _Hipótese 1b:_ percepções de eficácia externa estão negativamente associadas à busca por informação sobre política.
+###### _Hipótese 2:_ Os níveis de confiança nas instituições estão negativamente associados à busca por informação sobre política.
+###### _Hipótese 3a:_ A percepção dos níveis de corrupção está negativamente associada à busca por informação sobre política.
+###### _Hipótese 3b:_ Ter experimentado um ato de corrupção está associado à diminuição na probabilidade de buscar informação sobre política.     
+
+## **4. METODOLOGIA**
+
+### **4.1. BANCOS DE DADOS**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;	Para testar as hipóteses apresentadas, serão utilizados, de forma complementar, três diferentes bancos de dados de opinião pública: o _Latinobarómetro_, o Barômetro das Américas (LAPOP) e o _Global Corruption Barometer_. Os três contam com perguntas que mensuram a frequência, a forma ou o interesse na busca por informação sobre política e incluem variáveis sociodemográficas que podem interferir na relação estudada e que, portanto, precisam ser adicionas como controle. Serão utilizadas as pesquisas mais recentes, que são do ano de 2018, 2018 e 2019, respectivamente. Todos os três bancos utilizam amostras nacionalmente representativas e incluem grande parte dos países da América Latina.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Serão apenas utilizados os países que são considerados democracias pelo _The Economist’s Democracy Index_, visto que a dinâmica da busca por informação é diferente em países que não são considerados democráticos. A escolha da região está fundamentada na necessidade de contribuir para o debate sobre motivações e participação na América Latina, visto que as discussões se concentram, principalmente, em casos de países europeus ou norte-americanos[^25], como é possível observar nos trabalhos mobilizados na revisão da literatura. Além da análise agregada da região, será realizado um estudo comparado entre os diferentes países incluídos na amostra.
+
+[^25]: Especialmente os Estados Unidos.
+
+### **4.1.1. VARIÁVEL DEPENDENTE**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp;	Apesar de apresentado o conceito adotado para a variável dependente “busca por informação”, é necessário que este seja flexibilizado a fim de possibilitar a análise proposta através de bancos de dados mencionados. A seguir serão apresentadas as variáveis a serem utilizadas em cada um dos bancos de dados.
+
+###### **Latinobarómetro:** a variável dependente será a quantidade de canais que o cidadão utiliza para buscar informação sobre política. O entrevistador, ao perguntar “como se informa sobre política?”, lista uma série de canais e pede para o respondente escolher aqueles que utiliza, entre os seguintes: família, amigos, colegas de trabalho, de estudo, meios eletrônicos, rádio, jornais e revistas, TV, Facebook, Twitter, Youtube, outros e nenhum. Para esta VD, serão realizadas duas análises: para a primeira, um modelo de regressão linear hierárquico[^26], será criado um índice aditivo que admite 0 como menor valor e 13 como maior. Para a segunda análise, uma regressão logística ordinal, serão criadas 3 categorias a partir da média de canais utilizados (3,5): abaixo da média, na média e acima da média. 
+
+[^26]: A fim de evitar a violação do pressuposto de que as observações são independentes e respeitar a natureza hierárquica dos dados, já que estes estão agrupados por país. 
+
+###### **Barômetro das Américas:** será utilizada como variável dependente a frequência com que os respondentes prestam atenção em notícias, observada através da seguinte pergunta: “Com que frequência o sr./sra. presta atenção às notícias, seja na TV, rádio, jornais ou na internet?”. As alternativas de resposta são: diariamente, algumas vezes na semana, algumas vezes no mês, algumas vezes no ano e nunca. Para esta análise, será desenvolvido um modelo de regressão logística ordinal.
+
+###### **Global Corruption Barometer:** será utilizada como variável dependente a solicitação de informações ao governo. A pergunta é: “em alguns casos, órgãos públicos tornam informações publicamente acessíveis, como por exemplo através dos seus websites. Em outros casos, cidadãos solicitam que estes órgãos forneçam algumas informações. Nos últimos 12 meses, com que frequência você entrou oficialmente em contato com um órgão público para solicitar alguma informação?”. Estas são as alternativas de resposta: nunca, uma ou duas vezes, algumas vezes e frequentemente. Para esta análise, será desenvolvido um modelo de regressão logística ordinal.
+
+### **4.1.2. VARIÁVEIS EXPLICATIVAS**
+
+###### **Latinobarómetro:** serão utilizadas como variáveis independentes (1) a confiança no governo, (2) a confiança nos partidos, (3) a confiança na mídia e (4) o nível de corrupção percebido. Será também desenvolvido um outro modelo alternativo com o número percebido de oficiais corruptos ao invés do nível de corrupção.
+
+###### **Barômetro das Américas:** serão utilizadas como variáveis independentes (1) a confiança nas instituições, (2) nas eleições, (3) a quantidade de políticos envolvidos em corrupção, (4) a percepção do interesse do governo pelos seus cidadãos (eficácia externa) e (5) se o governo leva em conta a opinião dos cidadãos para formular políticas públicas (eficácia interna). 
+
+###### **Global Corruption Barometer:** serão utilizadas como variáveis independentes as medidas de (1) confiança nas instituições, (2) "nível" de corrupção percebido, (3) percepção de eficácia interna, (4) percepção de eficácia externa e (5) performance do governo na luta contra a corrupção.
+
+### **4.1.3. CONTROLES**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; As variáveis de controle relevantes a serem incluídas no modelo foram  selecionadas a partir de dois critérios: o primeiro, de análise fatores associados à busca por informação (ou à participação) frequentemente encontrados na literatura e, o segundo, a partir de _testes t_ realizados com o objetivo de encontrar diferenças significativas no comportamento de grupos (de idade, escolaridade, entre outros) que possam atuar como possíveis confounding variables. Serão utilizados tanto controles a nível do indivíduo, quanto de país: ideologia, interesse em política, idade, renda, educação e sexo para o primeiro caso e o escore da “qualidade” da democracia (medido pelo V-Dem) e uma variável dummy, que aponta se houve eleição presidencial no país ano da pesquisa para o segundo caso.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Mais uma vez, se faz necessário apontar que as variáveis escolhidas, por vezes, foram encontradas em estudos que utilizam medidas tradicionais de participação como variável dependente. É observado, por exemplo, que homens, eleitores mais velhos e com maiores níveis de escolaridade tendem a apresentar maiores níveis de participação política (Vecchione & Caprara, 2009). A renda e o interesse em política também são fatores que estão positivamente associados à participação (Tolbert & Mcneal, 2003). Quanto à busca por informação, a idade é uma variável que merece atenção: os mais jovens tendem a buscar mais informações, enquanto os mais velhos levam mais tempo analisando as informações encontradas (Riggle & Johnson, 1996).  
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Os _testes t_ foram realizados com as três variáveis dependentes para analisar a diferença na média da frequência da busca por informação, na quantidade de meios utilizados e na solicitação de informações ao governo entre diferentes grupos. Foram testados grupos divididos por escolaridade (abaixo de 10 anos de estudo versus acima de 10 anos), idade (até 50 versus acima de 50), faixa de renda (média versus alta, alta versus baixa, média versus baixa), sexo (homem versus mulheres) e ideologia (esquerda versus direita, centro versus esquerda, centro versus direita). As médias foram significativamente diferentes[^27] em todos eles. As expectativas a partir dos testes é que as variáveis idade e a _dummy_ para sexo (1 para mulher, 0 para homem) apresentem coeficientes negativos, enquanto escolaridade, renda e ideologia apresentem coeficientes positivos.
+
+[^27]: Com exceção das diferenças entre esquerda e centro, que não foram significantes.
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Um dos controles a nível de país, por sua vez, está ancorado nos achados de Hansen e Pedersen (2014), que observaram um aumento nos níveis de conhecimento e eficácia política na Dinamarca em períodos de campanha (por isso a variável que binária para ano de eleição). Também é observado que os assuntos relacionados à politica tornam-se mais salientes em anos de eleição e, portanto, as medidas de busca por informação podem estar infladas nesse período. O outro refere-se à qualidade da democracia e deriva de uma dedução lógica: uma das medidas desse índice é a disponibilidade de informações e a liberdade de expressão, quanto mais informação disponível e quanto maior a liberdade para acessá-las e difundi-las, mais fácil será a tarefa do eleitor. Por fim, é necessário também levar em conta as demais diferenças não observadas entre os países, e para esse fim, serão utilizadas regressões hierárquicas.  
+
+### **4.1.4. QUADROS DE VARIÁVEIS**
+
+###### **Latinobarómetro:**
+
+|    | **Variável**	                       | **Código**	 | **Sinal Esperado** |
+| :--| ------------------------------------|:-----------:| -----------------: |
+| VD | Como se informa sobre política[^28] | P19ST.A     | N/A                |
+| VI | Confiança no governo	               | P15STGBSC.E | -                  |
+| VI | Confiança nos partidos políticos    | P15STGBSC.H | -                  |
+| VI | Ideologia	                         | P22ST       | +                  |
+| VI | Nível de corrupção	                 | P80STTI     | -                  |
+
+[^28]: Os códigos das variáveis que farão parte do índice são: P19ST.A, P19ST.B, P19ST.C, P19ST.D, P19ST.E, P19ST.F, P19ST.G, P19ST.H, P19NC.I, P19NC.J, P19F.K, P19ST.L, P19ST.M.
+
+###### **Barômetro das Américas:**
+ 
+|    | **Variável**	                                    | **Código**	| **Sinal Esperado** |
+| :--| ------------------------------------------------ |:-----------:| -----------------: |
+| VD | Frequência com que presta atenção às notícias    | GI0N        | N/A                |
+| VI | Confiança na mídia	                              | B37         | -                  |
+| VI | Confiança nas Eleições	                          | B47A        | -                  |
+| VI | Eficácia interna                                 | EFF1        | +                  |
+| VI | Eficácia externa                                 | EFF10       | -                  |
+| VI | Políticos envolvidos em corrupção                | EXCNEW      | -                  |
+| VI | Ideologia	                                      | L1          | +                  |
+| VI | Interesse em política	                          | POL1        | +                  |
+	
+\pagebreak
+
+###### **Global Corruption Barometer:**
+
+|    | **Variável**                                     | **Código**  | **Sinal Esperado** |
+| :--| ------------------------------------------------ |:-----------:| -----------------: |
+| VD | Solicitou informações do governo                 | Q26(a)      | N/A                |
+| VI | Confiança nas instituições	                      | Q1          | -                  |
+| VI | Corrupção como um problema	                      | Q2          | -                  |
+| VI | Experiência com corrupção                        | Q20(b)      | +                  |
+| VI | Eficácia externa                                 | Q22(Ant2)   | -                  |
+| VI | Eficácia interna                                 | Q23(a)      | +                  |
+| VI | Governo luta contra a corrupção	                | Q5          | -                  |
+
+### **4.2.5. LIMITAÇÕES**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Se faz necessário mencionar que o presente estudo não busca encontrar uma relação causal; além da natureza dos dados utilizados não permitirem esse desenho, espera-se que as variáveis se reforcem mutuamente, criando “círculos virtuosos” ou “espirais de cinismo”. Também é preciso apontar que em certos casos a variável dependente não representará necessariamente um comportamento político, um exemplo é o modelo que será desenvolvido com os dados do Barômetro das Américas: a variável de resposta mede apenas a frequência com que um indivíduo presta atenção em notícias. Também há uma importante limitação no uso do Global Corruption Barometer: a pergunta feita para a VD busca medir a solicitação de informações a órgãos públicos através das leis de acesso à informação, mas a pergunta não deixa isto claro; é possível, portanto, que os resultados obtidos estejam inflados. Finalmente, na base de dados do Latinobarómetro, não há variável que mensure o interesse político e, assim, neste modelo, não será possível utilizar interesse como controle.  
+
+\pagebreak
+
+### **4.2.6. ANÁLISE EXPLORATÓRIA**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Antes de partir para a análise das relações entre as variáveis de interesse, é necessário compreender o contexto no qual estão inseridas. Para esse fim, serão apresentadas as estatísticas descritivas dos três bancos de dados utilizados.
+
+#### **4.2.6.1. LATINOBARÓMETRO**
+
+###### &nbsp;&nbsp;&nbsp;&nbsp; Nessa base de dados a variável busca por informação é representada pela quantidade de canais que os eleitores utilizam para buscar informação sobre política. É interessante observar, primeiramente, que a distribuição da variável apresenta diferentes padrões a depender do país observado: o 
+
+
+```{r echo=FALSE, message=FALSE, results='hide', warning=FALSE}
+
+# Criar nova base adicionando variável com o nome dos países:
+latinob2 <- mutate(latinob, nomepais = ifelse(pais == 32, "Argentina",
+                                        ifelse(pais == 76, "Brasil",
+                                        ifelse(pais == 152, "Chile",
+                                        ifelse(pais == 170, "Colômbia",
+                                        ifelse(pais == 188, "Costa Rica", 
+                                        ifelse(pais == 214, "República Dominicana",
+                                        ifelse(pais == 222, "El Salvador",
+                                        ifelse(pais == 484, "México",
+                                        ifelse(pais == 591, "Panamá",
+                                        ifelse(pais == 600, "Paraguai",
+                                        ifelse(pais == 604, "Peru",
+                                        ifelse(pais == 858, "Uruguai", "NA"
+                                        )))))))))))))  
+
+# Transformar variável adicionada em fator:
+latinob2$nomepais <- as.factor(as.character(latinob2$nomepais))  
+
+# Frequência do Número de Canais utilizados por país: 
+windowsFonts(Times=windowsFont("Times New Roman"))
+plot <- ggplot(latinob2, aes(x= polinf,  group=nomepais)) + 
+  geom_bar(aes(y = ..prop..), fill = "#4A91B0AA") +
+  labs(x ="Número de Canais", y="%", title="Frequência da Quantidade de Canais Utilizados por País")+
+  scale_y_continuous(labels=c("0.0"="0%","0.1"="10%", "0.2"="20%", "0.3"="30%"))+
+  theme_economist()+
+  theme(text=element_text(family="Times"))+
+  facet_wrap(~nomepais)
+
+plot + theme(
+  plot.background = element_rect(fill = "#FFFFFF", color = NA),
+  panel.grid.major = element_line(colour = "#000000AA", size=0.1))
+
+# Transformar variável "polinf" em fator para plotar a média de canais por país:
+latinob2$polinf <- as.factor(as.numeric(latinob2$polinf))  
+
+# Média de canais utilizados por país:
+windowsFonts(Times=windowsFont("Times New Roman"))
+plot2 <- ggplot(latinob2) + 
+  geom_bar(aes(reorder(nomepais, -polinf), polinf), stat = "summary", fun.y = "mean", fill="#4A91B0AA") +
+  xlab("") +
+  ylab("")+
+  labs(x="", y="", title="Média de Canais Utilizados por País")+
+  theme_economist()+
+  coord_flip()+
+  theme(text=element_text(family="Times"))
+
+plot2 + theme(
+  plot.background = element_rect(fill = "#FFFFFF", color = NA),
+  panel.grid.major = element_line(colour = "#000000AA", size=0.1)
+  )
+```
+
+
+
+
+
+
+
+
+## **REFERÊNCIAS**
+
+###### Achen, C. & Bartels, L. (2017). _Democracy for realists: Why elections do not produce responsive government_, Princeton University Press.
+
+###### Bartels, L. M. (1996). _Uninformed votes: Information effects in presidential elections_. American Journal of Political Science, 194-230.
+
+###### Bimber, B. (2001). _Information and political engagement in America: The search for effects of information technology at the individual level_. Political Research Quarterly, 54(1), 53-67.
+
+###### Birch, S., Allen, N. & Sarmiento-Mirwaldt, K. (2017). _Anger, Anxiety and Corruption Perceptions: Evidence from France_. Political Studies, 65(4), 893–911.
+
+###### Boulianne, S. (2009). _Does Internet Use Affect Engagement? A Meta-Analysis of Research. Political Communication_, 26(2), 193-211.
+
+###### Caprara, G. & Vecchione, M. (2013). _Personality approaches to political behavior_. In L. Huddy, D. O. Sears, & J. S. Levy (Eds.), The Oxford handbook of political psychology (p. 23–58). Oxford University Press.
+
+###### Chong, D. (2013). _Degrees of rationality in politics_. In The Oxford handbook of political psychology.
+
+###### Claibourn, M. & Martin, P. (2000). _Trusting and Joining? An Empirical Test of the Reciprocal Nature of Social Capital_. Political Behavior. 22(4), 267–291.
+
+###### Clausen, B., Kraay, A. & Nyiri, Z. (2009). _Corruption and Confidence in Public Institutions: Evidence from a Global Survey_. The World Bank, Policy Research Working Paper Series.
+
+###### Cuillier, D. & Piotrowski, S. (2009). _Internet information-seeking and its relation to support for access to government records_. Government Information Quarterly, 26(3), 441-449.
+
+###### Davies, T. (2010). _Open Data, Democracy and Public Sector Reform. A Look at Open Government Data Use From data.gov.uk_. 
+
+###### De Moor, J. (2015). _External Efficacy and Political Participation Revisited: The Role of Perceived Output Structures for State - and Non-State - Oriented Action Forms_. Parliamentary Affairs, 69(3), 642–662.
+
+###### Downs, A. (1957). _An economic theory of political action in a democracy_. Journal of Political Economy, 65(2), 135-150.
+
+###### Gil de Zúñiga, H., Jung, N. & Valenzuela, S. (2012). _Social Media Use for News and Individuals’ Social Capital, Civic Engagement and Political Participation_. Journal of Computer-Mediated Communication, 17(3), 319–336.
+
+###### Gillanders, R. (2015). _Corruption and anxiety in Sub-Saharan Africa_. Economics of Governance, 17(1), 47–69.
+
+###### Goldfinch, S., Gauld, R. & Herbison, P. (2009). _The Participation Divide? Political Participation, Trust in Government, and E-government in Australia and New Zealand_. Australian Journal of Public Administration, 68(3), 333–350.
+
+###### Hansen, K. & Pedersen, R. (2014). _Campaigns Matter: How Voters Become Knowledgeable and Efficacious During Election Campaigns_. Political Communication, 31(2), 303–324.
+
+###### Hawkins, B., Marando, V. & Taylor, G. (1971). _Efficacy, Mistrust, and Political Participation: Findings From Additional Data and Indicators_. The Journal of Politics, 33(4), 1130–1136.
+
+###### Immordino‐Yang, M. & Damasio, A. (2007). _We Feel, Therefore We Learn: The Relevance of Affective and Social Neuroscience to Education_. Mind, Brain, and Education, 1: 3-10
+
+###### Jerit, J., Barabas, J., & Bolsen, T. (2006). _Citizens, Knowledge, and the Information Environment_. American Journal of Political Science, 50(2), 266–282.
+
+###### Jones, P. & Dawson, P. (2008). _How much do voters know? An analysis of motivation and political awareness_. Scottish Journal of Political Economy, 55(2), 123-142.
+
+###### Klasnja, M., Tucker, J. & Deegan-Krause, K. (2016). _Pocketbook vs. Sociotropic Corruption Voting_. British Journal of Political Science, 46(1), 67–94.
+
+###### Larcinese, V. (2009). _Information acquisition, ideology and turnout: theory and evidence from Britain_. Journal of Theoretical Politics, 21(2), 237-276.
+
+###### Lau, R., Andersen, D., Ditonto, T., Kleinberg, M. & Redlawsk, D. (2016). _Effect of Media Environment Diversity and Advertising Tone on Information Search, Selective Exposure, and Affective Polarization_. Political Behavior, 39(1), 231–255.
+
+###### Lau, R., & Redlawsk, D. (2006). _How voters decide: Information processing in election campaigns_. Cambridge University Press.
+
+###### Lyons, J., & Sokhey, A. (2014). _Emotion, Motivation, and Social Information Seeking About Politics_. Political Communication, 31(2), 237–258.
+
+###### Norris, P. (1996). _Does Television Erode Social Capital? A Reply to Putnam_. PS: Political Science & Politics, 29(3), 474-480
+
+###### Norris, P. (2000). _A virtuous circle: Political communications in postindustrial societies_. Cambridge University Press.
+
+###### Norris, P. (2017). _Is Western democracy backsliding? Diagnosing the risks_. The Journal of Democracy.
+
+###### Palfrey, T., & Poole, K. (1987). _The relationship between information, ideology, and voting behavior_. American Journal of Political Science, 511-530.
+
+###### Pavão, N. (2018). _Corruption as the Only Option: The Limits to Electoral Accountability_. The Journal of Politics, 80(3), 996–1010.
+
+###### Pavão, N. (2019). _Corruption, Courts, and Public Opinion in Brazil_. In Corruption in Latin America, 93-107. Springer, Cham.
+
+###### Putnam, R. D. (1995). _Tuning in, tuning out: The strange disappearance of social capital in America_. PS: Political science & politics, 28(4), 664-683.
+
+###### Redlawsk, D., & Lau, R. (2003). _Do voters want candidates they like or candidates they agree with? Affect vs. cognition in voter decision making_. Unpublished Paper.
+
+###### Riker, W. H., & Ordeshook, P. C. (1968). _A Theory of the Calculus of Voting_. American Political Science Review, 62(1), 25-42.
+
+###### Samaras, C. (2013). _Political Knowledge and Democracy: The Role of Citizens' Motivation to Acquire Political Information_ (Doctoral dissertation).
+
+###### Scheufele, D., Nisbet, M., Brossard, D. & Nisbet, E. (2004). _Social Structure and Citizenship: Examining the Impacts of Social Setting, Network Heterogeneity, and Informational Variables on Political Participation_. Political Communication, 21(3), 315–338.
+
+###### Stroud, N. J. (2008). _Media use and political predispositions: Revisiting the concept of selective exposure_. Political Behavior, 30(3), 341-366.
+
+###### Wolfsfeld, G., Yarchi, M. & Samuel-Azran, T. (2016). _Political information repertoires and political participation_. New Media & Society, 18(9), 2096–2115.
+
+###### Valentino, N., Banks, A., Hutchings, V. & Davis, A. (2009). _Selective Exposure in the Internet Age: The Interaction between Anxiety and Information Utility_. Political Psychology, 30, 591-613., 
+
+###### Vecchione, M. & Caprara, G. V. (2009). _Personality determinants of political participation: The contribution of traits and self-efficacy beliefs_. Personality and Individual Differences, 46(4), 487–492.
+
+###### Marcus, G., Neuman, W. & MacKuen, M. (2000). _Affective intelligence and political judgment_. University of Chicago Press.
+
+###### Marcus, G, MacKuen, M. & Neuman, W. (2011). _Parsimony and Complexity: Developing and Testing Theories of Affective Intelligence_. Political Psychology, 32(2), 323–336.
+
+###### Riggle, E. & Johnson, M. (1996). _Age difference in political decision making: Strategies for evaluating political candidates_. Political Behavior, 18(1), 99–118.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
