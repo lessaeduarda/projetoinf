@@ -1,4 +1,4 @@
-require(plyr)
+
 require(dplyr)
 require(tidyverse)
 require(tidyr)
@@ -7,7 +7,6 @@ require(gridExtra)
 require(ggpubr)
 require(readxl)
 require(haven)
-require(magrittr)
 require(labelled)
 require(ggthemes)
 require(extrafont)
@@ -16,19 +15,14 @@ require(gridExtra)
 require(MASS)
 require(lme4)
 require(lmerTest)
-install.packages("lmerTest")
-require(lmerTest)
-install.packages("MuMIn")
 require(MuMIn)
 require(sjPlot)
-install.packages("AutoModel")
-install.packages("ordinal")
 require(ordinal)
 ---
   
 # LATINOBAROMETRO:
 # Carregar base do latinobarometro:
-setwd("C:/Users/Duda/Desktop/Trab Final - OP")
+setwd()
 latinob <- readRDS("Latinobarometro_2018_Esp_R_v20190303.rds")
 latinooriginal <- latinob 
 
