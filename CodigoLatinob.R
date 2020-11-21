@@ -1,4 +1,5 @@
 
+require(plyr)
 require(dplyr)
 require(tidyverse)
 require(tidyr)
@@ -7,6 +8,7 @@ require(gridExtra)
 require(ggpubr)
 require(readxl)
 require(haven)
+require(magrittr)
 require(labelled)
 require(ggthemes)
 require(extrafont)
@@ -22,7 +24,7 @@ require(ordinal)
   
 # LATINOBAROMETRO:
 # Carregar base do latinobarometro:
-setwd()
+setwd("C:/Users/Duda/Desktop/Trab Final - OP")
 latinob <- readRDS("Latinobarometro_2018_Esp_R_v20190303.rds")
 latinooriginal <- latinob 
 
@@ -208,18 +210,6 @@ p + theme(
 )
 
 
-polinfsolo <- c(latinob4$polinf)
-latinob4 <-  na.omit(latinob) 
-
-# Testando pressupostos:
-modellinearity <- plot(resid(reg))
-latinob4$reg.res<- residuals(reg) #extracts the residuals and places them in a new column in our original data table
-latinob4$abs.reg.res <-abs(latinob4$reg.res) #creates a new column with the absolute value of the residuals
-latinob4$reg.res2 <- latinob4$abs.reg.res^2 #squares the absolute values of the residuals to provide the more robust estimate
-Levene.reg <- lm(reg.res2 ~ pais, data=latinob4) #ANOVA of the squared residuals
-anova(Levene.reg) #displays the results
-                               
-
 --------------------------------------------------------------------------------
 
 # Teste com a VD categórica: abaixo da média, na média e  acima da média.
@@ -229,7 +219,7 @@ mean(latinob$polinf)
 count(latinob, polinf)  
 
 # Criar variável com esta medida:
-latinob2 <- mutate(latinob2, vdcategorica = ifelse(polinf < 3, "Abaixo da Média",
+latinob2 <- mutate(latinob, vdcategorica = ifelse(polinf < 3, "Abaixo da Média",
                                      ifelse(polinf == 3, "na Média",
                                      ifelse(polinf == 4, "na Média",
                                      ifelse(polinf > 4,"Acima da Média", "NA"
@@ -252,7 +242,7 @@ summary(reg2)
 
 --------------------------------------------------------------------------------
   
-# Criar nova base adicionando variável com o nome dos países:
+# Adicionar variável com o nome dos países:
   latinob2 <- mutate(latinob, nomepais = ifelse(pais == 32, "Argentina",
                                          ifelse(pais == 76, "Brasil",
                                          ifelse(pais == 152, "Chile",
@@ -303,3 +293,168 @@ plot2 + theme(
   panel.grid.major = element_line(colour = "#000000AA", size=0.1)
 )
 
+latinob2 <- read_rds("latinotratada")
+
+
+
+--------------------------------------------------------------------------------
+  
+# Análise LAPOP:
+  # Barômetro das Américas (LAPOP):
+  
+# Agregado:
+lapopagregado <- read_dta("2018 LAPOP AmericasBarometer Merge_v1.0_W.dta")
+paiseslapop <- c(1,6,11,8,12,15,14,3,13,17,7,21)
+# 1 = México
+# 6 = Costa Rica
+# 8 = Colômbia
+# 12 = Paraguai
+# 15 = Brasil
+# OBS: não tem Venezuela
+lapopagregado <- filter(lapopagregado, pais %in% paiseslapop)
+lapopagregado$pol1exp[is.na(lapopagregado$pol1exp)] <- 0
+lapopagregado$pol1exp[is.na(lapopagregado$pol1)] <- 0  
+lapopagregado$exc7new[is.na(lapopagregado$exc7new)] <- 0
+lapopagregado$exc7new[is.na(lapopagregado$exc7)] <- 0
+lapopagregado <- mutate(lapopagregado, exc7fim = exc7 + exc7new)
+lapopagregado <- mutate(lapopagregado, pol1fim = pol1 + pol1exp)
+lapopagregado2 <- data.frame("freqnot" = lapopagregado$gi0n, 
+                             "apoiosistpol" = lapopagregado$b6,
+                             "confmidia" = lapopagregado$b37,
+                             "confeleicoes" = lapopagregado$b47a,
+                             "confpartidos" = lapopagregado$b21,
+                             "confpresidente" = lapopagregado$b21a,
+                             "efext1" = lapopagregado$eff1,
+                             "efint" = lapopagregado$eff2,
+                             "efext2" = lapopagregado$eff10, # mais de 7 mil NAs
+                             "interesse" = lapopagregado$pol1fim,
+                             "idade" = lapopagregado$q2,
+                             "educacao" = lapopagregado$ed,
+                             "renda" = lapopagregado$q10new,
+                             "pais" = lapopagregado$pais)
+
+# Recodificar a VD (frequência de atenção às notícias) para que o menor valor
+# se refira à menor frequência e o maior valor à maior frequência:
+lapopagregado2$freqnot <- recode(lapopagregado2$freqnot, 
+                                 `1` = 5, `2` = 4, `3` = 3, `4` = 2, 
+                                 `5` = 1)
+count(lapopagregado2, freqnot)
+
+# Recodificar VI Interesse:
+lapopagregado2$interesse <- recode(lapopagregado2$interesse, 
+                                   `1` = 4, `2` = 2, `3` = 3, `4` = 1)
+
+
+lapopagregado2$pais <- as.factor(as.numeric(lapopagregado2$pais))
+
+reg3 <- lmer(freqnot ~ apoiosistpol + confmidia + confpartidos + confpresidente +
+               efext1 + efint + interesse + idade + educacao + renda +
+               (1 | pais), data = lapopagregado2)
+
+summary(reg3)
+r.squaredGLMM(reg3)
+summary(lapopagregado2)
+
+
+--------------------------------------------------------------------------------
+  
+# Análise GCB:
+
+# VD:
+# Q25B – Você já solicitou infos?
+  
+# VIs:
+# Q21DCAR – Oficiais do governo usam os seus poderes para beneficiar as pessoas
+# Q21ECAR – Você pode dizer se a pessoa é boa ou ruim pela sua posição política
+# Q1A – Confiança no governo
+# Q1B – Nas cortes
+# Q1C – Na polícia
+# Q2 – Nível de problema corrupção
+# Q19_A – Frequência fake news espalhada para influenciar a eleição
+# Q21ACAR – Políticos devem sempre ouvir os problemas das pessoas
+# DEMGENDERFIN – Gênero
+# DEMAGEFIN – Idade
+# DEMEDU2FIN - Educação
+# COUNTRY
+
+basegcb <- read_rds("baselatam.rds")
+summary(basegcb)
+
+count(basegcb, baselatam.Q25B)
+basegcb$baselatam.Q25B  <- recode(basegcb$baselatam.Q25B, 
+                                  "Never" = 1, "Once or twice" = 2, 
+                                  "A few times" = 3, "Often" = 4, "Don't know" = 0)
+
+basegcb$baselatam.Q2 <- recode(basegcb$baselatam.Q2, 
+                               "No problem at all" = 1, "Fairly small" = 2, 
+                               "Quite big" = 3, "A very big problem" = 4, "Don't know" = 0)
+count(basegcb, baselatam.Q2)
+
+
+basegcb$baselatam.Q1A <- recode(basegcb$baselatam.Q1A, 
+                               "No trust at all" = 1, "Not a lot of trust" = 2, 
+                               "A fair amount of trust" = 3, "A great deal of trust" = 4,
+                               "Don't know" = 0)
+count(basegcb, baselatam.Q1A)
+
+basegcb$baselatam.Q1B <- recode(basegcb$baselatam.Q1B, 
+                                "No trust at all" = 1, "Not a lot of trust" = 2, 
+                                "A fair amount of trust" = 3, "A great deal of trust" = 4,
+                                "Don't know" = 0)
+count(basegcb, baselatam.Q1B)
+
+basegcb$baselatam.Q1C <- recode(basegcb$baselatam.Q1C, 
+                                "No trust at all" = 1, "Not a lot of trust" = 2, 
+                                "A fair amount of trust" = 3, "A great deal of trust" = 4,
+                                "Don't know" = 0)
+count(basegcb, baselatam.Q1C)
+
+basegcb$baselatam.Q19_A <- recode(basegcb$baselatam.Q19_A, 
+                                "Never" = 1, "Rarely" = 2, 
+                                "Occasionally" = 3, "Frequently" = 4,"Very frequently" = 5,
+                                "Don't know" = 0)
+count(basegcb, baselatam.Q19_A)
+
+basegcb$baselatam.Q21ACAR <- recode(basegcb$baselatam.Q21ACAR, 
+                                  "Strongly disagree" = 1, "Tend to disagree" = 2, 
+                                  "Neither agree nor disagree" = 3, "Tend to agree" = 4,"Strongly agree" = 5,
+                                  "Don't know" = 0)
+count(basegcb, baselatam.Q21ACAR)
+
+
+basegcb$baselatam.DEMEDU2FIN <- recode(basegcb$baselatam.DEMEDU2FIN, 
+                                         "No formal education" = 1, "Primary" = 2,
+                                       "Secondary" = 3, "Post-secondary" = 4)
+
+count(basegcb, baselatam.DEMEDU2FIN)
+
+
+basegcb2 <- na_if(basegcb, 0)
+
+basegcb2$baselatam.DEMGENDERFIN <- recode(basegcb2$baselatam.DEMGENDERFIN, 
+                                         "Male" = 1, "Female" = 0)
+
+count(basegcb2, baselatam.DEMGENDERFIN)
+
+### !!!! AINDA NÃO FUNCIONA !!! ###
+basegcb3 <- data.frame("solicinfo" = basegcb$baselatam.Q25B, 
+                             "corrupprob" = basegcb$baselatam.Q2,
+                             "confgov" = basegcb$baselatam.Q1A,
+                             "confcortes" = basegcb$baselatam.Q1B,
+                             "confpolicia" = basegcb$baselatam.Q1C,
+                             "fakenews" = basegcb$baselatam.Q19_A,
+                             "efext" = basegcb$baselatam.Q21ACAR,
+                             "educacao" = basegcb$baselatam.DEMEDU2FIN, 
+                             "homem" = basegcb$baselatam.DEMGENDERFIN,
+                             "idade" = basegcb$DEMAGEFIN,
+                             "pais" = basegcb$baselatam.COUNTRY)
+
+### !!!! !!!! ###
+
+
+reg4 <- lmer(baselatam.Q25B ~ baselatam.Q2 + baselatam.Q1A + baselatam.Q1B + baselatam.Q1C +
+               baselatam.Q19_A + baselatam.Q21ACAR + baselatam.DEMGENDERFIN + 
+               baselatam.DEMAGEFIN + baselatam.DEMEDU2FIN +
+               (1 | baselatam.COUNTRY), data = basegcb2)
+summary(reg4)
+r.squaredGLMM(reg4)
